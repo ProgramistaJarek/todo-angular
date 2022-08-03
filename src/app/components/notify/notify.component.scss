@@ -6,7 +6,7 @@
   top: 50px;
   right: 100px;
   opacity: 1;
-  animation: mymove 0.1s ease-in;
+  animation: mymove 0.1s ease-in-out;
   p {
     margin: 0;
     font-size: 1rem;
@@ -22,25 +22,13 @@
   background-color: #f83434;
 }
 
-@keyframes anime {
-  0% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 @keyframes mymove {
   0% {
     top: -50px;
     opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
   }
   100% {
     top: 50px;
