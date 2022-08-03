@@ -1,0 +1,49 @@
+.notify {
+  width: 275px;
+  padding: 1rem 0.5rem;
+  border-radius: 0.5rem;
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  opacity: 1;
+  animation: mymove 0.1s ease-in;
+  p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+.success {
+  background-color: #4fbf26;
+}
+
+.error {
+  background-color: #f83434;
+}
+
+@keyframes anime {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes mymove {
+  0% {
+    top: -50px;
+    opacity: 0;
+  }
+  100% {
+    top: 50px;
+    opacity: 1;
+  }
+}

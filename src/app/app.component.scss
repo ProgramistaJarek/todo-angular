@@ -1,0 +1,38 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  h3 {
+    text-align: center;
+  }
+}
+
+.task-container {
+  display: flex;
+}
+
+.task {
+  width: 350px;
+  h4 {
+    text-align: center;
+  }
+}
+
+.mat-list-item {
+  margin: 1rem 0;
+  height: auto !important;
+}
+
+.mat-list-item-content {
+  display: block !important;
+}
+
+@media only screen and (max-width: 500px) {
+  .task-container {
+    flex-direction: column;
+  }
+  .task-undone {
+    margin-top: 1rem;
+  }
+}

@@ -1,0 +1,46 @@
+<main>
+  <h1>Todo</h1>
+
+  <form onSubmit="return false;">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Nazwa taska</mat-label>
+      <input matInput placeholder="Ex. Eat Pizza" #task />
+    </mat-form-field>
+    <button mat-button color="primary" (click)="addTask()">ADD</button>
+  </form>
+
+  <div>
+    <h3>Lista zadań</h3>
+
+    <mat-list class="task-container">
+      <div class="task task-done">
+        <h4>Done</h4>
+        <mat-list-item
+          *ngFor="let item of this.service.getTodos() | filterTask: true"
+          class="mat-list-item"
+        >
+          <app-todo-item
+            [item]="item"
+            (onDeleteTask)="deleteTask($event)"
+            (onDoneTask)="doneTask($event)"
+          ></app-todo-item>
+        </mat-list-item>
+      </div>
+
+      <div class="task task-undone">
+        <h4>Undone</h4>
+        <mat-list-item
+          *ngFor="let item of this.service.getTodos() | filterTask: false"
+          class="mat-list-item"
+        >
+          <app-todo-item
+            [item]="item"
+            (onDeleteTask)="deleteTask($event)"
+            (onDoneTask)="doneTask($event)"
+          ></app-todo-item>
+        </mat-list-item>
+      </div>
+    </mat-list>
+    <ng-template appNotify></ng-template>
+  </div>
+</main>

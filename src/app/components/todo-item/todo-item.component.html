@@ -1,0 +1,21 @@
+<div class="task">
+  <div class="task-details" [appTooltip]="item">
+    <mat-icon
+      class="input"
+      (click)="onClickDone()"
+      fontIcon="done"
+      [ngStyle]="{
+        'background-color': item.done ? '#00c400' : null
+      }"
+    ></mat-icon>
+    <p>{{ item.name }}</p>
+  </div>
+
+  <mat-icon
+    class="btn"
+    aria-hidden="false"
+    aria-label="Example home icon"
+    fontIcon="delete"
+    (click)="onClickDelete()"
+  ></mat-icon>
+</div>

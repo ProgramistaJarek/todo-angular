@@ -1,0 +1,48 @@
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 100%;
+
+  .task-details {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.input {
+  appearance: none;
+  background-color: white;
+  color: white;
+  border: 2px solid black;
+  border-radius: 100%;
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+  overflow: visible;
+  cursor: pointer;
+  &:hover {
+    background-color: #30e2ff;
+  }
+}
+
+.btn {
+  appearance: none;
+  background-color: rgba(235, 235, 57, 0.9);
+  border: none;
+  border-radius: 100%;
+  min-width: 36px;
+  min-height: 36px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  &:hover {
+    background-color: rgba(247, 247, 23, 0.9);
+  }
+}
+
+p {
+  margin: 0;
+}
