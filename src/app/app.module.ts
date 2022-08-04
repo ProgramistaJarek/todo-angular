@@ -10,19 +10,17 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { FilterTaskPipe } from './pipes/filter-task.pipe';
 import { TooltipDirective } from './directives/tooltip.directive';
-import { NotifyDirective } from './directives/notify.directive';
-import { NotifyComponent } from './components/notify/notify.component';
-import { TodoItemComponent } from './components/todo-item/todo-item.component';
+
+import { NotifyModule } from './modules/notify.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     FilterTaskPipe,
     TooltipDirective,
-    NotifyDirective,
-    NotifyComponent,
     TodoItemComponent,
   ],
   imports: [
@@ -33,6 +31,7 @@ import { TodoItemComponent } from './components/todo-item/todo-item.component';
     MatFormFieldModule,
     MatListModule,
     MatIconModule,
+    NotifyModule,
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent],

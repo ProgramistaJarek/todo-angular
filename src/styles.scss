@@ -26,6 +26,10 @@ body {
   animation-fill-mode: forwards;
 }
 
+.mat-list-item-content {
+  display: block !important;
+}
+
 @keyframes tooltip-slide {
   0% {
     opacity: 0;
@@ -35,8 +39,4 @@ body {
     opacity: 1;
     transform: translate(-50%, 0);
   }
-}
-
-.mat-list-item-content {
-  display: block !important;
 }

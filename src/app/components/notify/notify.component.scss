@@ -1,7 +1,5 @@
-.notify {
+:host {
   width: 275px;
-  padding: 1rem 0.5rem;
-  border-radius: 0.5rem;
   position: absolute;
   top: 50px;
   right: 100px;
@@ -11,6 +9,8 @@
     margin: 0;
     font-size: 1rem;
     font-weight: 500;
+    padding: 1rem 0.5rem;
+    border-radius: 0.5rem;
   }
 }
 
