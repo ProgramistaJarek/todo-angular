@@ -15,6 +15,7 @@ import { FilterTaskPipe } from './pipes/filter-task.pipe';
 import { TooltipDirective } from './directives/tooltip.directive';
 
 import { NotifyModule } from './modules/notify.module';
+import { UiDialogModule } from './modules/ui-dialog.module';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { NotifyModule } from './modules/notify.module';
     MatListModule,
     MatIconModule,
     NotifyModule,
+    UiDialogModule,
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent],

@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 import { TodosService } from './services/todos.service';
 import { MessagesService } from './services/messages.service';
@@ -10,7 +10,7 @@ import { Todos } from './Todos';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'todo';
 
   @ViewChild('task') task!: ElementRef;
@@ -29,8 +29,6 @@ export class AppComponent implements OnInit {
     private msgService: MessagesService
   ) {}
 
-  ngOnInit(): void {}
-
   addTask() {
     const taskName = this.task.nativeElement.value;
 
@@ -47,8 +45,8 @@ export class AppComponent implements OnInit {
   }
 
   deleteTask($event: Todos) {
+    this.msgService.loadUiDailog($event);
     this.msgService.loadOverlay(this.notifyMessages.successDeleteTask);
-    this.service.deleteTask($event);
   }
 
   doneTask($event: Todos) {
