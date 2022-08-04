@@ -3,10 +3,12 @@
   align-items: center;
   justify-content: space-between;
   min-width: 100%;
-
   .task-details {
     display: flex;
     align-items: center;
+    p {
+      margin: 0;
+    }
   }
 }
 
@@ -41,8 +43,4 @@
   &:hover {
     background-color: rgba(247, 247, 23, 0.9);
   }
-}
-
-p {
-  margin: 0;
 }

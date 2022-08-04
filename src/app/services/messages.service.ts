@@ -3,7 +3,6 @@ import { Overlay } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 
 import { NotifyComponent } from '../components/notify/notify.component';
-import { NotifyDirective } from '../directives/notify.directive';
 
 import { MessageItem } from '../message-item';
 
@@ -31,6 +30,10 @@ export class MessagesService {
         name: 'You successfully change your task',
         type: 'success',
       }),
+      new MessageItem({
+        name: 'You successfully add your task',
+        type: 'success',
+      }),
     ];
   }
 
@@ -40,25 +43,12 @@ export class MessagesService {
     const overlayRef = this.overlay.create({
       positionStrategy: this.overlay.position().global().top().right(),
     });
-    const filePreviewPortal = new ComponentPortal(NotifyComponent);
-    const cmpRef = overlayRef.attach(filePreviewPortal);
+    const containerPortal = new ComponentPortal(NotifyComponent);
+    const cmpRef = overlayRef.attach(containerPortal);
     cmpRef.instance.data = msg.data;
 
     this.interval = window.setTimeout(() => {
       overlayRef.dispose();
-    }, this.delay);
-  }
-
-  loadComponent(idx: number, host: NotifyDirective) {
-    const msg = this.getMessages()[idx];
-
-    host.viewContainerRef.clear();
-    const componentRef = host.viewContainerRef.createComponent(NotifyComponent);
-
-    componentRef.instance.data = msg.data;
-
-    this.interval = window.setTimeout(() => {
-      componentRef.destroy();
     }, this.delay);
   }
 }
