@@ -14,9 +14,7 @@ export class AppComponent {
   title = 'todo';
 
   @ViewChild('task') task!: ElementRef;
-
   index!: number;
-
   notifyMessages = {
     errorAddTask: 0,
     successDeleteTask: 1,
@@ -45,8 +43,8 @@ export class AppComponent {
   }
 
   deleteTask($event: Todos) {
-    this.msgService.loadUiDailog($event);
-    this.msgService.loadOverlay(this.notifyMessages.successDeleteTask);
+    this.msgService.loadUiDailog($event, this.notifyMessages.successDeleteTask);
+    //this.msgService.loadOverlay(this.notifyMessages.successDeleteTask);
   }
 
   doneTask($event: Todos) {

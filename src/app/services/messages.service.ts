@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Overlay } from '@angular/cdk/overlay';
-import { Dialog, DialogRef } from '@angular/cdk/dialog';
+import { Dialog } from '@angular/cdk/dialog';
 import { ComponentPortal } from '@angular/cdk/portal';
 
 import { NotifyComponent } from '../components/notify/notify.component';
@@ -16,7 +16,7 @@ import { Todos } from '../Todos';
 export class MessagesService {
   interval!: number;
   delay: number = 1500;
-  msg!: MessageItem[];
+  msg!: MessageItem;
 
   constructor(private overlay: Overlay, private dialog: Dialog) {}
 
@@ -56,11 +56,9 @@ export class MessagesService {
     }, this.delay);
   }
 
-  loadUiDailog(task: Todos) {
+  loadUiDailog(task: Todos, idx: number) {
     const dialogRef = this.dialog.open(UiDialogComponent, {
-      width: '300px',
-      height: '250px',
-      data: task,
+      data: { task: task, id: idx },
     });
   }
 }
