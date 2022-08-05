@@ -47,14 +47,6 @@ export class AppComponent {
   }
 
   /**
-   * Set date and run addTask function
-   * @param dateObject takes a value of date that user choose
-   */
-  setDate(dateObject: any) {
-    this.addTask(dateObject.value);
-  }
-
-  /**
    * Add task to todo list
    * @param date is a date that user chosen
    */
@@ -84,7 +76,7 @@ export class AppComponent {
    */
   doneTask($event: Todos) {
     this.msgService.loadOverlay(this.notifyMessages.successDoneTask);
-    this.service.changeDone($event);
+    this.service.changeDone($event.id);
   }
 
   /**

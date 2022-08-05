@@ -18,6 +18,7 @@ import { TooltipDirective } from './features/directives/tooltip.directive';
 
 import { NotifyModule } from './features/notify/notify.module';
 import { UiDialogModule } from './features/ui-dialog/ui-dialog.module';
+import { UiEditTaskModule } from './features/ui-edit-task/ui-edit-task.module';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { UiDialogModule } from './features/ui-dialog/ui-dialog.module';
     UiDialogModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    UiEditTaskModule,
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent],

@@ -2,11 +2,13 @@
   <h1>Todo</h1>
 
   <form onSubmit="return false;">
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Nazwa taska</mat-label>
+    <mat-form-field appearance="outline">
+      <mat-label>Task name</mat-label>
       <input matInput placeholder="Ex. Eat Pizza" #task />
     </mat-form-field>
-    <button mat-button color="primary" (click)="setDeadline()">ADD</button>
+    <button mat-raised-button color="primary" (click)="setDeadline()">
+      Add task
+    </button>
 
     <input
       class="calendar"

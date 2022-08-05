@@ -31,7 +31,7 @@ export class UiDialogComponent {
 
   onBtnClick(event: boolean) {
     if (event === true) {
-      this.service.deleteTask(this.data.task);
+      this.service.deleteTask(this.data.task.id);
       this.msgService.loadOverlay(this.data.id);
       this.dialogRef.close();
     } else {

@@ -11,9 +11,16 @@
 
     <div class="task-text">
       <p>{{ item.name }}</p>
-      <p class="date" *ngIf="this.item.deadline">
-        DL: {{ this.item.deadline | date: "d MMM, yyyy" }}
+      <p
+        class="date"
+        *ngIf="this.item.deadline"
+        [ngStyle]="{
+          color: sameDates() ? 'red' : 'green'
+        }"
+      >
+        DL: {{ item.deadline | date: "d MMM, yyyy" }}
       </p>
+      <button (click)="onClickEdit()">edit</button>
     </div>
   </div>
 

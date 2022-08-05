@@ -1,0 +1,24 @@
+<form onSubmit="return false;">
+  <mat-form-field appearance="outline">
+    <mat-label>Nazwa taska</mat-label>
+    <input
+      matInput
+      placeholder="Your task"
+      [value]="this.data.task.name"
+      #task
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <input
+      matInput
+      [matDatepicker]="picker"
+      [value]="this.data.task.deadline"
+      (dateChange)="this.dateObject = $event.value"
+    />
+    <mat-hint *ngIf="!this.data.task.deadline">MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <button mat-stroked-button color="primary" (click)="editTask()">Edit</button>
+</form>

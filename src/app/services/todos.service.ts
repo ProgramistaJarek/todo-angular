@@ -38,11 +38,11 @@ export class TodosService {
 
   /**
    * change task done
-   * @param task is a task object
+   * @param index task id
    */
-  changeDone(task: Todos) {
+  changeDone(index: number) {
     this.todos.filter((e) => {
-      if (e.id === task.id) {
+      if (e.id === index) {
         e.done = !e.done;
         e.done === true
           ? (e.doneCreated = new Date())
@@ -53,10 +53,22 @@ export class TodosService {
 
   /**
    * deleting task from array through comparing a names
-   * @param task is a task object
+   * @param index task id
    */
-  deleteTask(task: Todos) {
-    const newTasksArray = this.todos.filter((e) => e.id !== task.id);
+  deleteTask(index: number) {
+    const newTasksArray = this.todos.filter((e) => e.id !== index);
     this.todos = newTasksArray;
+  }
+
+  /**
+   * Update task name and deadline
+   * @param index task id
+   * @param taskName new task name
+   * @param newDate new date
+   */
+  updateTask(index: number, taskName: string, newDate: Date) {
+    return this.todos.filter((e) => {
+      e.id === index ? ((e.name = taskName), (e.deadline = newDate)) : null;
+    });
   }
 }
