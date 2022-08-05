@@ -3,4 +3,5 @@ export interface Todos {
   name: string;
   done: boolean;
   doneCreated?: Date;
+  deadline?: Date;
 }

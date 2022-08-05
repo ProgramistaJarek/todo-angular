@@ -6,7 +6,15 @@
       <mat-label>Nazwa taska</mat-label>
       <input matInput placeholder="Ex. Eat Pizza" #task />
     </mat-form-field>
-    <button mat-button color="primary" (click)="addTask()">ADD</button>
+    <button mat-button color="primary" (click)="setDeadline()">ADD</button>
+
+    <input
+      class="calendar"
+      matInput
+      [matDatepicker]="picker"
+      (dateChange)="this.addTask($event.value)"
+    />
+    <mat-datepicker touchUi #picker></mat-datepicker>
   </form>
 
   <div>

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Overlay } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 
-import { NotifyComponent } from '../notify.component';
+import { NotifyComponent } from './components/notify.component';
 
 import { MessageItem } from 'src/app/message-item';
 

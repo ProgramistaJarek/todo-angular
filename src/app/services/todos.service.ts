@@ -30,9 +30,10 @@ export class TodosService {
    * adding task to the todos array
    * @param task name of the task to add
    * @param index task id
+   * @param date deadline
    */
-  addTask(task: string, index: number) {
-    this.todos.push({ id: index, name: task, done: false });
+  addTask(task: string, index: number, date: Date) {
+    this.todos.push({ id: index, name: task, done: false, deadline: date });
   }
 
   /**

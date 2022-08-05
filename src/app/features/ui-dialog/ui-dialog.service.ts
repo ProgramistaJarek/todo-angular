@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Dialog } from '@angular/cdk/dialog';
-import { UiDialogComponent } from '../../ui-dialog/ui-dialog.component';
+import { UiDialogComponent } from './components/ui-dialog.component';
 import { Todos } from 'src/app/Todos';
 
 @Injectable({

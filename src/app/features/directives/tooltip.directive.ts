@@ -6,7 +6,7 @@ import {
   ElementRef,
   Input,
 } from '@angular/core';
-import { Todos } from '../Todos';
+import { Todos } from '../../Todos';
 
 @Directive({
   selector: '[appTooltip]',

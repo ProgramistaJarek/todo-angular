@@ -7,15 +7,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { FilterTaskPipe } from './pipes/filter-task.pipe';
-import { TooltipDirective } from './directives/tooltip.directive';
+import { TooltipDirective } from './features/directives/tooltip.directive';
 
-import { NotifyModule } from './features/notify/module/notify.module';
-import { UiDialogModule } from './features/ui-dialog/module/ui-dialog.module';
+import { NotifyModule } from './features/notify/notify.module';
+import { UiDialogModule } from './features/ui-dialog/ui-dialog.module';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { UiDialogModule } from './features/ui-dialog/module/ui-dialog.module';
     MatIconModule,
     NotifyModule,
     UiDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent],

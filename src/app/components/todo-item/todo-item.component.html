@@ -1,18 +1,24 @@
 <div class="task">
   <div class="task-details" [appTooltip]="item">
     <mat-icon
-      class="input"
+      class="btn-change"
       (click)="onClickDone()"
       fontIcon="done"
       [ngStyle]="{
         'background-color': item.done ? '#00c400' : null
       }"
     ></mat-icon>
-    <p>{{ item.name }}</p>
+
+    <div class="task-text">
+      <p>{{ item.name }}</p>
+      <p class="date" *ngIf="this.item.deadline">
+        DL: {{ this.item.deadline | date: "d MMM, yyyy" }}
+      </p>
+    </div>
   </div>
 
   <mat-icon
-    class="btn"
+    class="btn-delete"
     aria-hidden="false"
     aria-label="Example home icon"
     fontIcon="delete"

@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { DialogRef, DIALOG_DATA } from '@angular/cdk/dialog';
 
 import { TodosService } from 'src/app/services/todos.service';
-import { MessagesService } from 'src/app/features/notify/service/messages.service';
+import { MessagesService } from '../../notify/messages.service';
 
 import { Todos } from 'src/app/Todos';
 

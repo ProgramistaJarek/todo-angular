@@ -6,14 +6,19 @@
   .task-details {
     display: flex;
     align-items: center;
-    p {
-      margin: 0;
-      word-wrap: break-word;
+    .task-text {
+      p {
+        margin: 0;
+        word-wrap: break-word;
+      }
+      .date {
+        font-size: 11px;
+      }
     }
   }
 }
 
-.input {
+.btn-change {
   appearance: none;
   background-color: white;
   color: white;
@@ -29,7 +34,7 @@
   }
 }
 
-.btn {
+.btn-delete {
   appearance: none;
   background-color: rgba(235, 235, 57, 0.9);
   border: none;
