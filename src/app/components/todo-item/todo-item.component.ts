@@ -18,12 +18,10 @@ export class TodoItemComponent {
 
   onClickDone() {
     this.onDoneTask.emit(this.item);
-    //this.service.changeDone(this.item);
   }
 
   onClickDelete() {
     this.onDeleteTask.emit(this.item); 
-    //this.service.deleteTask(this.item);
   }
 
 }

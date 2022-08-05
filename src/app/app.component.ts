@@ -1,7 +1,8 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 
 import { TodosService } from './services/todos.service';
-import { MessagesService } from './services/messages.service';
+import { MessagesService } from './features/notify/service/messages.service';
+import { UiDialogService } from './features/ui-dialog/service/ui-dialog.service';
 
 import { Todos } from './Todos';
 
@@ -24,7 +25,8 @@ export class AppComponent {
 
   constructor(
     public service: TodosService,
-    private msgService: MessagesService
+    private msgService: MessagesService,
+    private dialogService: UiDialogService
   ) {}
 
   addTask() {
@@ -43,8 +45,10 @@ export class AppComponent {
   }
 
   deleteTask($event: Todos) {
-    this.msgService.loadUiDailog($event, this.notifyMessages.successDeleteTask);
-    //this.msgService.loadOverlay(this.notifyMessages.successDeleteTask);
+    this.dialogService.loadUiDailog(
+      $event,
+      this.notifyMessages.successDeleteTask
+    );
   }
 
   doneTask($event: Todos) {

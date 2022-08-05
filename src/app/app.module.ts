@@ -14,8 +14,8 @@ import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { FilterTaskPipe } from './pipes/filter-task.pipe';
 import { TooltipDirective } from './directives/tooltip.directive';
 
-import { NotifyModule } from './modules/notify.module';
-import { UiDialogModule } from './modules/ui-dialog.module';
+import { NotifyModule } from './features/notify/module/notify.module';
+import { UiDialogModule } from './features/ui-dialog/module/ui-dialog.module';
 
 @NgModule({
   declarations: [

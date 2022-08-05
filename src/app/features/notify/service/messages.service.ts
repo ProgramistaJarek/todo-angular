@@ -1,14 +1,11 @@
 import { Injectable } from '@angular/core';
 
 import { Overlay } from '@angular/cdk/overlay';
-import { Dialog } from '@angular/cdk/dialog';
 import { ComponentPortal } from '@angular/cdk/portal';
 
-import { NotifyComponent } from '../components/notify/notify.component';
-import { UiDialogComponent } from '../components/ui-dialog/ui-dialog.component';
+import { NotifyComponent } from '../notify.component';
 
-import { MessageItem } from '../message-item';
-import { Todos } from '../Todos';
+import { MessageItem } from 'src/app/message-item';
 
 @Injectable({
   providedIn: 'root',
@@ -18,8 +15,12 @@ export class MessagesService {
   delay: number = 1500;
   msg!: MessageItem;
 
-  constructor(private overlay: Overlay, private dialog: Dialog) {}
+  constructor(private overlay: Overlay) {}
 
+  /**
+   * Messages to display about success or error
+   * @returns an array of MessageItem
+   */
   getMessages(): MessageItem[] {
     return [
       new MessageItem({
@@ -41,6 +42,10 @@ export class MessagesService {
     ];
   }
 
+  /**
+   * Creates a NotifyComponent to display message
+   * @param idx which message should be displays
+   */
   loadOverlay(idx: number) {
     const msg = this.getMessages()[idx];
 
@@ -54,11 +59,5 @@ export class MessagesService {
     this.interval = window.setTimeout(() => {
       overlayRef.dispose();
     }, this.delay);
-  }
-
-  loadUiDailog(task: Todos, idx: number) {
-    const dialogRef = this.dialog.open(UiDialogComponent, {
-      data: { task: task, id: idx },
-    });
   }
 }
